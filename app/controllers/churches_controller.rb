@@ -15,8 +15,21 @@ class ChurchesController < ApplicationController
       flash[:alert] = "Some error prohibited church from saving"
     end
   end
-
   def show
+    @church = Church.find(params[:id])
+  end
+  def edit
+    @church = Church.find(params[:id])
+  end
+  def update
+    @church = Church.find(params[:id])
+    if @church.update(church_params)
+      redirect_to @church
+      flash[:notice] = "Church updated successfully"
+    else
+      render :edit
+      flash[:alert] = "Some error prohibited church from updating"
+    end 
   end
   private
   def church_params
