@@ -29,8 +29,16 @@ class ChurchesController < ApplicationController
     else
       render :edit
       flash[:alert] = "Some error prohibited church from updating"
-    end 
+    end
   end
+  def destroy
+    @church = Church.find(params[:id])
+    if @church.destroy
+      flash[:notice] = "Church deleted"
+      redirect_to churches_path
+    end
+  end
+
   private
   def church_params
     params.require(:church).permit(:name, :address, :vision, :email)
