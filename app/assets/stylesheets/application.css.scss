@@ -1,0 +1,8 @@
+@import "bootstrap";
+// background-image
+
+.jumbotron {
+  background: url("church.jpg");
+  background-size: cover;
+  min-height: 100vh;
+}
