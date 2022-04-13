@@ -17,6 +17,7 @@ class ChurchesController < ApplicationController
   end
   def show
     @church = Church.find(params[:id])
+    @departments = @church.departments
   end
   def edit
     @church = Church.find(params[:id])

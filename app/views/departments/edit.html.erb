@@ -1,0 +1,15 @@
+<%= form_with(model: [@church, @department], local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= form.label :motto %>
+    <%= form.text_field :motto %>
+  </div>
+  <div class="form-group">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+  </div>
+  <%= form.submit %>
+<% end %>

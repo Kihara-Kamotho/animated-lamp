@@ -6,7 +6,8 @@ RSpec.feature "user can edit church" do
     # navigate to show page, then click edit
     visit "/"
 
-    click_link "Kalahari"
+    # click_link "Kalahari"
+    visit church_path(church)
     click_link "Edit"
 
     fill_in "Name", with: "Mukerenju"
