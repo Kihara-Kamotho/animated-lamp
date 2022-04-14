@@ -74,3 +74,5 @@ group :test do
 end
 
 gem "bootstrap", "= 5"
+# authentication
+gem 'devise', '~> 4.8', '>= 4.8.1'

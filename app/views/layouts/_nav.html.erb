@@ -3,6 +3,12 @@
       <%= image_tag("icons8-home.svg") %>
   </a>
   <div class="nav-end d-flex justify-content-end px-2">
+    <% if user_signed_in? %>
+      <strong class="px-2"><%= current_user.email %></strong>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
     <p class="text-success"><a class="text-decoration-none text-black px-2"href="/">Events</a></p>
     <p><a class="text-decoration-none text-black px-2"href="/">Contact us</a></p>
     <p><a class="text-decoration-none text-black px-2"href="/">Live</a></p>
