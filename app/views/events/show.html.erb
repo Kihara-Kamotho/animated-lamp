@@ -1,0 +1,46 @@
+<div class="container bg-light mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="event-img p-4 mt-4 d-flex justify-content-center">
+        <% if @event.pic.attached? %>
+          <%= image_tag(@event.pic, :size => "700x300") %>
+        <% else %>
+          No image attached for event
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="">
+        <div class="event-name text-center">
+          <h3><%= @event.name %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-center">
+        <div class="col-8 p-4">
+          <div class="p-2 d-flex justify-content-end">
+            <% unless @event.date.nil? && @event.time.nil? %>
+              <strong><i>Event to be held on <%= @event.date.strftime("%d/%m%y") %> starting from <%= @event.time.strftime("%k:%m") %></i></strong>
+            <% end %>
+          </div>
+          <%= @event.details %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="">
+      <div class="p-2 d-inline">
+        <%= link_to "Edit", edit_event_url(@event), class: "btn btn-primary"%>
+      </div>
+      <div class="p-2 d-inline">
+        <%= button_to "Delete", event_url(@event), method: :delete, class: "btn btn-danger"%>
+      </div>
+    </div>
+  </div>
+</div>

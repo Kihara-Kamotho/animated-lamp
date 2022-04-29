@@ -6,6 +6,8 @@
   <%= link_to "Edit", edit_church_url %>
   <%= button_to "Delete", church_path(@church), method: :delete %>
   <%= link_to "New Department", new_church_department_url(@church) %>
+  <!-- New Event -->
+  <%= link_to "New Event", new_event_path %>
   <div class="departments">
     <div class="row row-cols-3">
       <% @church.departments.each do |department| %>

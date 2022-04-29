@@ -1,0 +1,13 @@
+<div class="container mt-4 text-center bg-light rounded border-top">
+  <h3 class="p-4">Upcoming Events</h3>
+  <div class="d-block">
+    <% @events.each do |event| %>
+      <div class="">
+        <strong><h4 class="px-4"><%= event.name %></h4></strong>
+        <i>This event will be held on</i><span class="px-4"><%= event.date.strftime("%d-%m-%y") %></span>
+        <%= link_to "Join", event_path(event), class: "btn btn-primary"%>
+        <hr>
+      </div>
+    <% end %>
+  </div>
+</div>

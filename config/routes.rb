@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :churches do
     resources :departments
   end
+  #
+  resources :events
 end
