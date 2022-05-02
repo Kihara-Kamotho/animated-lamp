@@ -24,9 +24,7 @@
       <div class="d-flex justify-content-center">
         <div class="col-8 p-4">
           <div class="p-2 d-flex justify-content-end">
-            <% unless @event.date.nil? && @event.time.nil? %>
-              <strong><i>Event to be held on <%= @event.date.strftime("%d/%m%y") %> starting from <%= @event.time.strftime("%k:%m") %></i></strong>
-            <% end %>
+              <strong><i>Event to be held on <%= @event.date.strftime("%d/%m/%y") %> starting from <%= @event.time %></i></strong>
           </div>
           <%= @event.details %>
         </div>
